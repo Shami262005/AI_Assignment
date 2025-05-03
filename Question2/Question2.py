@@ -1,6 +1,8 @@
 import numpy as np
 from python_tsp.heuristics import solve_tsp_simulated_annealing
 
+towns = ["Windhoek", "Swakopmund", "Walvis Bay", "Otjiwarongo", "Tsumeb", "Grootfontein", "Mariental", "Keetmanshoop", "Ondangwa", "Oshakati"]
+# define the distance matrix between city pairs
 distance_matrix = np.array([
 	[0, 361, 395, 249, 433, 459, 268, 497, 678, 712],
 	[361, 0, 35.5, 379, 562, 589, 541, 859, 808, 779],
@@ -15,5 +17,12 @@ distance_matrix = np.array([
 ])
 
 Cities_index, distance = solve_tsp_simulated_annealing(distance_matrix)
-print("Permutation:", Cities_index)
-print("Distance:", distance)
+#printing the optimized route by city index
+print("Optimized Route (Index) : ", Cities_index)
+print()
+for i in range(len(Cities_index)):
+    print(f"{i}. {towns[Cities_index[i]]}")
+    
+print(f"\nReturn to start: {towns[Cities_index[0]]}")
+# displaying the total distance in kilometres
+print(f"\nTotal distance: {distance:.2f} km")
