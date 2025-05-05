@@ -111,7 +111,7 @@ class Maze:
 
 # Usage example
 if __name__ == "__main__":
-    maze_file = r"C:\Users\Nyasha\OneDrive - NUST\Desktop\Golden\Fifth Semester\Artificial Intell\Question 1. Informed Search\maze.txt"  # Example maze file path
+    maze_file = "maze.txt"  # Example maze file path
     maze = Maze(maze_file)
     
     # Solve using Greedy Search
